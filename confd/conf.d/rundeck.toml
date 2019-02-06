@@ -1,0 +1,7 @@
+[template]
+src = "rundeck/rundeck-config.properties"
+dest = "/home/rundeck/server/config/rundeck-config.properties"
+keys = [
+    "/hostname",
+    "/rundeck",
+]

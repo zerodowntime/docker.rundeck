@@ -2,7 +2,7 @@
 ## author: Piotr Stawarski <piotr.stawarski@zerodowntime.pl>
 ##
 
-FROM centos:7
+FROM zerodowntime/centos
 
 ARG RUNDECK_VERSION=3.0.13-20190123
 ARG EXTRA_PACKAGES
@@ -14,7 +14,6 @@ RUN yum -y install \
       git \
       java-1.8.0 \
       python-virtualenv \
-      https://repo.rundeck.org/latest.rpm \
       $EXTRA_PACKAGES \
     && yum clean all && rm -rf /var/cache/yum
 
@@ -28,7 +27,9 @@ RUN curl -L "https://dl.bintray.com/rundeck/rundeck-maven/rundeck-$RUNDECK_VERSI
 RUN java -jar rundeck.war --installonly && \
     mkdir /home/rundeck/server/logs /home/rundeck/var/storage
 
-COPY templates /templates
+COPY confd/templates  /etc/confd/templates
+COPY confd/conf.d     /etc/confd/conf.d
+
 COPY docker-entrypoint.sh /
 
 VOLUME /home/rundeck/server/data
