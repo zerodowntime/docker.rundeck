@@ -34,6 +34,7 @@ COPY docker-entrypoint.sh /
 
 VOLUME /home/rundeck/server/data
 VOLUME /home/rundeck/server/logs
+VOLUME /home/rundeck/projects
 VOLUME /home/rundeck/var/storage
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
