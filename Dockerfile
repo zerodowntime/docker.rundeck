@@ -26,7 +26,7 @@ RUN curl -L "https://dl.bintray.com/rundeck/rundeck-maven/rundeck-$RUNDECK_VERSI
 
 RUN java -jar rundeck.war --installonly
 
-RUN mkdir /home/rundeck/server/logs /home/rundeck/var/storage /home/rundeck/etc
+RUN mkdir /home/rundeck/server/logs /home/rundeck/var/storage /home/rundeck/etc /home/rundeck/projects
 
 COPY confd/templates  /etc/confd/templates
 COPY confd/conf.d     /etc/confd/conf.d
