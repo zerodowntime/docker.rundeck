@@ -1,0 +1,8 @@
+[template]
+src = "rundeck/profile"
+dest = "/home/rundeck/etc/profile"
+keys = [
+    "/hostname",
+    "/rundeck",
+]
+

@@ -10,7 +10,10 @@ fi
 
 confd -onetime || exit 2
 
+source /home/rundeck/etc/profile
+
 exec java \
+  ${RDECK_JVM} \
   -XX:+UnlockExperimentalVMOptions \
   -XX:MaxRAMFraction="${JVM_MAX_RAM_FRACTION:-1}" \
   -XX:+UseCGroupMemoryLimitForHeap \

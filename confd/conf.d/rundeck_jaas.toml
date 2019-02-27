@@ -1,0 +1,8 @@
+[template]
+src = "rundeck/jaas-multi.conf"
+dest = "/home/rundeck/etc/jaas-multi.conf"
+keys = [
+    "/hostname",
+    "/rundeck",
+]
+
