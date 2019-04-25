@@ -9,11 +9,11 @@ ARG EXTRA_PACKAGES
 
 EXPOSE 4440
 
-RUN yum -y install \
+RUN yum -y install epel-release && yum -y install \
       gettext \
       git \
       java-1.8.0 \
-      python-virtualenv \
+      python36 \
       $EXTRA_PACKAGES \
     && yum clean all && rm -rf /var/cache/yum
 
