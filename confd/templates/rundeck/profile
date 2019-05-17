@@ -30,6 +30,7 @@ RDECK_JVM="$RDECK_JVM -Xmx1024m -Xms256m -XX:MaxMetaspaceSize=256m"
 {{ if lsdir "/rundeck/jaas/modules" }}
 RDECK_JVM="$RDECK_JVM -Drundeck.jaaslogin=true -Djava.security.auth.login.config=/home/rundeck/etc/jaas-multi.conf -Dloginmodule.name=multiauth"
 {{ end }} 
+RDECK_JVM="$RDECK_JVM -Drundeck.jetty.connector.forwarded=true"
 
 
 export RDECK_JVM
