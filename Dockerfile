@@ -13,7 +13,9 @@ RUN yum -y install epel-release && yum -y install \
       gettext \
       git \
       java-1.8.0 \
+      make \
       python36 \
+      python36-pip \
       $EXTRA_PACKAGES \
     && yum clean all && rm -rf /var/cache/yum
 
